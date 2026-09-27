@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>ORKA Projects      &mdash; Admin Dashboard</title>
+  <title>ORKA Projects &mdash; Admin Dashboard</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -21,358 +21,209 @@
     /* -------------------------------------------------- */
 
     :root {
-
       --night:        #0a0a0c;
-
       --night-deep:   #070708;
-
       --night-mid:    #0f0f12;
-
       --night-raise:  #131316;
-
       --brass:        #b89240;
-
       --brass-bright: #d4a84b;
-
       --brass-dim:    rgba(184,146,64,.22);
-
       --ink:          #f0ede6;
-
       --ink-muted:    #8a8880;
-
       --ink-faint:    #2a2928;
-
       --border:       rgba(240,237,230,.07);
-
       --border-md:    rgba(240,237,230,.12);
-
       --s-review:     #d4a84b;
-
       --s-review-bg:  rgba(212,168,75,.08);
-
       --s-approved:   #7dbf7d;
-
       --s-approved-bg:rgba(125,191,125,.07);
-
       --s-payment:    #c89444;
-
       --s-payment-bg: rgba(200,148,68,.08);
-
       --s-confirmed:  #5ab85a;
-
       --s-confirmed-bg:rgba(90,184,90,.07);
-
       --s-rejected:   #b86464;
-
       --s-rejected-bg:rgba(184,100,100,.07);
-
       --ease: cubic-bezier(.25,.46,.45,.94);
-
     }
-
-
 
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 
     html,body{height:100%;}
 
     body{
-
       font-family:'Source Sans 3',sans-serif;
-
       background:var(--night);
-
       color:var(--ink);
-
       display:flex;
-
       min-height:100vh;
-
       -webkit-font-smoothing:antialiased;
-
       overflow-x:hidden;
-
     }
-
-
 
     /* -------------------------------------------------- */
 
     .sidebar{
-
       width:220px;flex-shrink:0;
-
       background:var(--night-deep);
-
       border-right:1px solid var(--border);
-
       display:flex;flex-direction:column;
-
       position:fixed;top:0;left:0;bottom:0;
-
       z-index:50;overflow-y:auto;
-
     }
 
     .main{
-
       margin-left:220px;
-
+      width:calc(100% - 220px);
       flex:1;
-
       display:flex;flex-direction:column;
-
       min-height:100vh;
-
     }
-
-
 
     /* -------------------------------------------------- */
 
     .sb-logo{
-
       padding:24px 20px 20px;
-
       border-bottom:1px solid var(--border);
-
     }
 
     .sb-logo-name{
-
       font-family:'Big Shoulders Display',sans-serif;
-
       font-size:17px;font-weight:900;
-
       text-transform:uppercase;letter-spacing:.04em;
-
       color:var(--ink);
-
     }
 
     .sb-logo-name em{color:var(--brass-bright);font-style:normal;}
 
     .sb-logo-sub{
-
       font-size:10px;letter-spacing:.16em;
-
       text-transform:uppercase;color:var(--ink-muted);
-
       margin-top:3px;
-
     }
 
-
-
     .sb-event{
-
       margin:0;padding:16px 20px;
-
       border-bottom:1px solid var(--border);
-
       background:rgba(240,237,230,.02);
-
     }
 
     .sb-event-label{
-
       font-size:9px;letter-spacing:.2em;text-transform:uppercase;
-
       color:var(--ink-muted);margin-bottom:6px;
-
     }
 
     .sb-event-name{
-
       font-family:'Big Shoulders Display',sans-serif;
-
       font-size:14px;font-weight:900;text-transform:uppercase;
-
       line-height:1;color:var(--ink);margin-bottom:4px;
-
     }
 
     .sb-event-date{font-size:11px;color:var(--brass);}
 
-
-
     .sb-nav{padding:12px 0;flex:1;}
 
-
-
     .sb-nav-group{
-
       font-size:9px;letter-spacing:.2em;text-transform:uppercase;
-
       color:var(--ink-faint);padding:12px 20px 6px;
-
     }
 
-
-
     .sb-item{
-
       display:flex;align-items:center;gap:10px;
-
       padding:10px 20px;cursor:pointer;
-
       font-size:13px;color:var(--ink-muted);
-
       transition:all .18s;
-
       position:relative;
-
       border:none;background:none;width:100%;text-align:left;
-
     }
 
     .sb-item:hover{color:var(--ink);background:rgba(240,237,230,.025);}
 
     .sb-item.active{
-
       color:var(--ink);
-
       background:rgba(240,237,230,.04);
-
     }
 
     .sb-item.active::before{
-
       content:'';position:absolute;left:0;top:0;bottom:0;
-
       width:2px;background:var(--brass-bright);
-
     }
 
     .sb-event-item.active-event{
-
       color:var(--brass-bright);
-
       background:rgba(184,146,64,.05);
-
     }
 
     .sb-event-item.active-event::before{
-
       content:'';position:absolute;left:0;top:0;bottom:0;
-
       width:2px;background:var(--brass-bright);
-
     }
 
     .sb-badge{
-
       margin-left:auto;
-
       background:var(--brass);
-
       color:var(--night-deep);
-
       font-size:10px;font-weight:700;
-
       min-width:18px;height:18px;
-
       display:flex;align-items:center;justify-content:center;
-
       padding:0 5px;
-
     }
 
-
-
     .sb-footer{
-
       padding:16px 20px;border-top:1px solid var(--border);
-
     }
 
     .sb-user-name{font-size:13px;color:var(--ink);margin-bottom:2px;}
 
     .sb-user-role{
-
       font-size:10px;letter-spacing:.12em;text-transform:uppercase;
-
       color:var(--ink-muted);
-
     }
-
-
 
     /* -------------------------------------------------- */
 
     .topbar{
-
       position:sticky;top:0;z-index:40;
-
       height:60px;
-
       background:rgba(10,10,12,.92);
-
       backdrop-filter:blur(16px);
-
       border-bottom:1px solid var(--border);
-
       display:flex;align-items:center;
-
       justify-content:space-between;
-
       padding:0 40px;
-
       flex-shrink:0;
-
     }
 
     .topbar-left{display:flex;align-items:center;gap:16px;}
 
     .topbar-title{
-
       font-family:'Big Shoulders Display',sans-serif;
-
       font-size:18px;font-weight:900;text-transform:uppercase;
-
       letter-spacing:.02em;
-
     }
 
     .topbar-right{display:flex;align-items:center;gap:20px;}
 
     .topbar-link{
-
       font-size:11px;letter-spacing:.12em;text-transform:uppercase;
-
       color:var(--ink-muted);cursor:pointer;
-
       background:none;border:none;
-
       transition:color .18s;padding:0;
-
     }
 
     .topbar-link:hover{color:var(--ink);}
 
     .topbar-link.primary{
-
       color:var(--brass);
-
       border:1px solid var(--brass-dim);
-
       padding:8px 16px;
-
       transition:all .18s;
-
     }
 
     .topbar-link.primary:hover{
-
       color:var(--brass-bright);
-
       border-color:rgba(184,146,64,.4);
-
       background:rgba(184,146,64,.04);
-
     }
-
-
 
     /* -------------------------------------------------- */
 
@@ -380,68 +231,43 @@
 
     .view.active{display:block;}
 
-
-
     /* -------------------------------------------------- */
 
     .ov-header{margin-bottom:40px;}
 
     .ov-eyebrow{
-
       font-size:10px;letter-spacing:.24em;text-transform:uppercase;
-
       color:var(--brass);margin-bottom:10px;
-
     }
 
     .ov-title{
-
       font-family:'Big Shoulders Display',sans-serif;
-
       font-size:clamp(32px,4vw,52px);font-weight:900;
-
       text-transform:uppercase;line-height:.92;margin-bottom:8px;
-
     }
 
     .ov-sub{font-size:14px;color:var(--ink-muted);}
 
-
-
     .metrics{
-
       display:grid;grid-template-columns:repeat(4,1fr);
-
       gap:1px;background:var(--border);
-
       border:1px solid var(--border);
-
       margin-bottom:40px;
-
     }
 
     .metric{
-
       background:var(--night-deep);
-
       padding:28px 28px 24px;
-
     }
 
     .metric-label{
-
       font-size:9px;letter-spacing:.22em;text-transform:uppercase;
-
       color:var(--ink-muted);margin-bottom:12px;
-
     }
 
     .metric-value{
-
       font-family:'Big Shoulders Display',sans-serif;
-
       font-size:44px;font-weight:900;line-height:1;margin-bottom:4px;
-
     }
 
     .metric-value.brass{color:var(--brass-bright);}
@@ -449,107 +275,68 @@
     .metric-sub{font-size:12px;color:var(--ink-muted);}
 
     .metric-change{
-
       display:inline-flex;align-items:center;gap:4px;
-
       margin-top:6px;
-
       font-size:11px;color:var(--s-confirmed);
-
     }
-
-
 
     .ov-grid{
-
       display:grid;grid-template-columns:1fr 1fr;
-
       gap:24px;
-
     }
 
-
-
     .panel{
-
       background:var(--night-deep);
-
       border:1px solid var(--border);
-
       padding:28px;
-
     }
 
     .panel-title{
-
       font-family:'Big Shoulders Display',sans-serif;
-
       font-size:18px;font-weight:900;text-transform:uppercase;
-
       margin-bottom:20px;letter-spacing:.02em;
-
     }
-
-
 
     /* Pipeline / funnel */
 
     .pipeline{display:flex;flex-direction:column;gap:0;}
 
     .pipe-row{
-
       display:flex;align-items:center;gap:16px;
-
       padding:12px 0;border-bottom:1px solid var(--border);
-
     }
 
     .pipe-row:last-child{border-bottom:none;}
 
     .pipe-label{
-
       font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-
       color:var(--ink-muted);flex:1;
-
     }
 
     .pipe-count{
-
       font-family:'Big Shoulders Display',sans-serif;
-
       font-size:26px;font-weight:900;color:var(--ink);
-
       min-width:32px;text-align:right;
-
     }
 
     .pipe-bar-wrap{flex:2;height:4px;background:var(--ink-faint);}
 
     .pipe-bar{height:100%;}
 
-
-
-    /* Activity */
+    /* --- Activity --- */
 
     .activity{display:flex;flex-direction:column;}
 
     .act-item{
-
       display:flex;align-items:flex-start;gap:14px;
-
       padding:14px 0;border-bottom:1px solid var(--border);
-
     }
 
     .act-item:last-child{border-bottom:none;}
 
     .act-dot{
-
       width:6px;height:6px;border-radius:50%;flex-shrink:0;
-
       margin-top:6px;
-
     }
 
     .act-text{font-size:13px;line-height:1.5;}
@@ -557,85 +344,50 @@
     .act-co{font-weight:600;}
 
     .act-time{
-
       font-size:11px;color:var(--ink-muted);
-
       margin-top:3px;letter-spacing:.04em;
-
     }
-
-
 
     /* -------------------------------------------------- */
 
     .app-filters{
-
       display:flex;
-
       align-items:center;
-
       gap:2px;
-
       padding:3px;
-
       background:rgba(240,237,230,.04);
-
       border:1px solid var(--border);
-
       width:fit-content;
-
       max-width:100%;
-
       flex-wrap:wrap;
-
       margin-bottom:32px;
-
     }
 
     .app-filter{
-
       display:inline-flex;align-items:center;gap:8px;
-
       padding:8px 18px;
-
       font-family:'Source Sans 3',sans-serif;
-
       font-size:11px;font-weight:500;
-
       letter-spacing:.1em;text-transform:uppercase;
-
       color:var(--ink-muted);
-
       background:transparent;
-
       border:none;
-
       cursor:pointer;
-
       transition:color .18s, background .18s;
-
       white-space:nowrap;
-
       position:relative;
-
     }
 
     .app-filter:hover{
-
       color:var(--ink);
-
       background:rgba(240,237,230,.05);
-
     }
 
     /* -------------------------------------------------- */
 
     .app-filter.active{
-
       background:rgba(240,237,230,.11);
-
       color:var(--ink);
-
     }
 
     /* Per-status text color when active */
@@ -652,64 +404,40 @@
 
     .app-filter[data-f="rejected"].active { color:var(--s-rejected); background:rgba(184,100,100,.09); }
 
-
-
     /* -------------------------------------------------- */
 
     .app-filter-dot{
-
       width:5px;height:5px;border-radius:50%;flex-shrink:0;
-
       transition:opacity .18s;
-
       opacity:.25;
-
     }
 
     .app-filter.active .app-filter-dot{ opacity:1; }
 
-
-
     /* -------------------------------------------------- */
 
     .app-filter-count{
-
       font-size:11px;font-weight:700;
-
       opacity:.45;
-
       transition:opacity .18s;
-
     }
 
     .app-filter.active .app-filter-count{ opacity:.8; }
 
-
-
     .app-table{width:100%;border-collapse:collapse;}
 
     .app-table th{
-
       font-size:9px;letter-spacing:.2em;text-transform:uppercase;
-
       color:var(--ink-muted);text-align:left;
-
       padding:10px 16px;
-
       border-bottom:1px solid var(--border-md);
-
     }
 
     .app-table td{
-
       padding:16px 16px;
-
       border-bottom:1px solid var(--border);
-
       font-size:13px;
-
       vertical-align:middle;
-
     }
 
     .app-row{cursor:pointer;transition:background .15s;}
@@ -719,39 +447,24 @@
     .app-row:hover .app-row-action{opacity:1;}
 
     .app-row-action{
-
       font-size:10px;letter-spacing:.12em;text-transform:uppercase;
-
       color:var(--brass);opacity:0;transition:opacity .15s;
-
     }
 
-
-
     .app-co-name{
-
       font-weight:600;color:var(--ink);
-
       margin-bottom:2px;
-
     }
 
     .app-co-country{font-size:11px;color:var(--ink-muted);}
 
-
-
-    /* Status badges */
+    /* --- Status badges --- */
 
     .badge{
-
       display:inline-flex;align-items:center;
-
       font-size:9px;letter-spacing:.16em;text-transform:uppercase;
-
       padding:3px 9px;border:1px solid;
-
       white-space:nowrap;
-
     }
 
     .badge.review{ color:var(--s-review); border-color:rgba(212,168,75,.3); background:var(--s-review-bg);}
@@ -764,125 +477,74 @@
 
     .badge.rejected{ color:var(--s-rejected); border-color:rgba(184,100,100,.3); background:var(--s-rejected-bg);}
 
-
-
     /* -------------------------------------------------- */
 
     .panel-overlay{
-
       display:none;position:fixed;inset:0;
-
       background:rgba(7,7,8,.6);backdrop-filter:blur(4px);
-
       z-index:80;
-
     }
 
     .panel-overlay.show{display:block;}
 
-
-
     .detail-panel{
-
       position:fixed;right:0;top:0;bottom:0;
-
       width:520px;
-
       background:var(--night-deep);
-
       border-left:1px solid var(--border-md);
-
       z-index:90;
-
       display:flex;flex-direction:column;
-
       transform:translateX(100%);
-
       transition:transform .35s var(--ease);
-
       overflow:hidden;
-
     }
 
     .detail-panel.open{transform:none;}
 
-
-
     .dp-header{
-
       padding:28px 32px 20px;
-
       border-bottom:1px solid var(--border);
-
       flex-shrink:0;
-
     }
 
     .dp-close{
-
       display:flex;align-items:center;gap:8px;
-
       font-size:10px;letter-spacing:.14em;text-transform:uppercase;
-
       color:var(--ink-muted);cursor:pointer;background:none;border:none;
-
       padding:0;margin-bottom:16px;transition:color .18s;
-
     }
 
     .dp-close:hover{color:var(--ink);}
 
     .dp-co-name{
-
       font-family:'Big Shoulders Display',sans-serif;
-
       font-size:28px;font-weight:900;text-transform:uppercase;
-
       line-height:.95;margin-bottom:10px;
-
     }
 
     .dp-badges{display:flex;gap:8px;flex-wrap:wrap;}
 
-
-
     .dp-tabs{
-
       display:flex;gap:0;
-
       border-bottom:1px solid var(--border);
-
       flex-shrink:0;
-
     }
 
     .dp-tab{
-
       padding:12px 20px;
-
       font-size:10px;letter-spacing:.14em;text-transform:uppercase;
-
       color:var(--ink-muted);cursor:pointer;
-
       border-bottom:2px solid transparent;
-
       transition:all .18s;margin-bottom:-1px;
-
       background:none;border-left:none;border-right:none;border-top:none;
-
     }
 
     .dp-tab:hover{color:var(--ink);}
 
     .dp-tab.active{
-
       color:var(--ink);
-
       border-bottom-color:var(--brass-bright);
-
     }
-
-
 
     .dp-body{flex:1;overflow-y:auto;padding:28px 32px;}
 
@@ -890,72 +552,44 @@
 
     .dp-tab-pane.active{display:block;}
 
-
-
     .dp-field{margin-bottom:20px;}
 
     .dp-field-label{
-
       font-size:9px;letter-spacing:.2em;text-transform:uppercase;
-
       color:var(--ink-muted);margin-bottom:5px;
-
     }
 
     .dp-field-value{font-size:14px;color:var(--ink);}
 
-
-
     .dp-field-grid{
-
       display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;
-
       margin-bottom:24px;
-
     }
-
-
 
     .dp-section-title{
-
       font-size:10px;letter-spacing:.2em;text-transform:uppercase;
-
       color:var(--brass);margin-bottom:14px;
-
       padding-bottom:10px;border-bottom:1px solid var(--border);
-
       margin-top:24px;
-
     }
 
-
-
-    /* Documents in panel */
+    /* --- Documents in panel --- */
 
     .dp-docs{display:flex;flex-direction:column;gap:10px;}
 
     .dp-doc{
-
       display:flex;align-items:center;gap:12px;
-
       padding:12px 14px;
-
       border:1px solid var(--border);
-
       background:rgba(240,237,230,.02);
-
       cursor:pointer;
-
       transition:border-color .18s;
-
     }
 
     .dp-doc:hover{border-color:var(--border-md);}
 
     .dp-doc-icon{
-
       font-size:14px;opacity:.5;flex-shrink:0;
-
     }
 
     .dp-doc-name{font-size:13px;flex:1;}
@@ -963,299 +597,180 @@
     .dp-doc-size{font-size:11px;color:var(--ink-muted);}
 
     .dp-doc-status{
-
       font-size:9px;letter-spacing:.14em;text-transform:uppercase;
-
       color:var(--s-confirmed);
-
     }
 
-
-
-    /* Notes */
+    /* --- Notes --- */
 
     .dp-notes-input{
-
       width:100%;background:rgba(240,237,230,.03);
-
       border:1px solid var(--border-md);
-
       color:var(--ink);
-
       font-family:'Source Sans 3',sans-serif;
-
       font-size:14px;padding:12px 14px;
-
       outline:none;resize:vertical;
-
       min-height:100px;line-height:1.6;
-
       transition:border-color .18s;
-
     }
 
     .dp-notes-input:focus{border-color:var(--brass);}
 
     .dp-notes-input::placeholder{color:var(--ink-faint);}
 
-
-
-    /* Actions */
+    /* --- Actions --- */
 
     .dp-actions{
-
       padding:20px 32px;
-
       border-top:1px solid var(--border);
-
       display:flex;gap:10px;flex-shrink:0;
-
       flex-wrap:wrap;
-
     }
 
-
-
     .btn{
-
       display:inline-flex;align-items:center;gap:8px;
-
       font-family:'Source Sans 3',sans-serif;
-
       font-size:11px;font-weight:600;letter-spacing:.12em;
-
       text-transform:uppercase;cursor:pointer;
-
       border:none;transition:all .18s var(--ease);
-
       white-space:nowrap;
-
     }
 
     .btn-approve{
-
       background:var(--s-approved);color:var(--night-deep);
-
       padding:11px 20px;
-
     }
 
     .btn-approve:hover{background:#8ecf8e;}
 
     .btn-revise{
-
       background:transparent;color:var(--s-payment);
-
       border:1px solid rgba(200,148,68,.35);padding:10px 18px;
-
     }
 
     .btn-revise:hover{background:var(--s-payment-bg);}
 
     .btn-reject{
-
       background:transparent;color:var(--s-rejected);
-
       border:1px solid rgba(184,100,100,.3);padding:10px 18px;
-
       margin-left:auto;
-
     }
 
     .btn-reject:hover{background:var(--s-rejected-bg);}
 
     .btn-assign{
-
       background:var(--brass);color:var(--night-deep);
-
       padding:11px 20px;
-
     }
 
     .btn-assign:hover{background:var(--brass-bright);}
 
     .btn-ghost{
-
       background:transparent;color:var(--ink-muted);
-
       border:1px solid var(--border-md);padding:10px 18px;
-
     }
 
     .btn-ghost:hover{color:var(--ink);border-color:var(--border-md);background:rgba(240,237,230,.03);}
 
-
-
     /* -------------------------------------------------- */
 
     .fp-header{
-
       display:flex;align-items:center;justify-content:space-between;
-
       margin-bottom:28px;
-
     }
 
     .fp-legend{
-
       display:flex;align-items:center;gap:20px;
-
     }
 
     .fp-legend-item{
-
       display:flex;align-items:center;gap:7px;
-
       font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-
       color:var(--ink-muted);
-
     }
 
     .fp-legend-dot{
-
       width:10px;height:10px;
-
       flex-shrink:0;
-
     }
-
-
 
     .fp-hall-label{
-
       font-size:10px;letter-spacing:.22em;text-transform:uppercase;
-
       color:var(--brass);margin-bottom:12px;padding-bottom:10px;
-
       border-bottom:1px solid var(--border);
-
     }
 
-
-
     .fp-grid{
-
       display:grid;
-
       gap:8px;
-
       margin-bottom:28px;
-
     }
 
     .fp-grid.hall-a{grid-template-columns:repeat(4,1fr);}
 
     .fp-grid.hall-b{grid-template-columns:repeat(5,1fr);}
 
-
-
     .booth{
-
       padding:18px 16px;
-
       border:1px solid var(--border);
-
       background:var(--night-mid);
-
       cursor:pointer;
-
       transition:all .2s var(--ease);
-
       min-height:100px;
-
       display:flex;flex-direction:column;
-
       gap:8px;
-
       position:relative;
-
     }
 
     .booth:hover{border-color:var(--border-md);background:var(--night-raise);}
 
-
-
     .booth.available{}
 
     .booth.review-assigned{
-
       border-color:rgba(212,168,75,.3);
-
       background:rgba(212,168,75,.05);
-
     }
 
     .booth.approved-assigned{
-
       border-color:rgba(125,191,125,.25);
-
       background:rgba(125,191,125,.04);
-
     }
 
     .booth.confirmed-assigned{
-
       border-color:rgba(90,184,90,.35);
-
       background:rgba(90,184,90,.06);
-
     }
 
     .booth.payment-assigned{
-
       border-color:rgba(200,148,68,.3);
-
       background:rgba(200,148,68,.05);
-
     }
 
-
-
     .booth-id{
-
       font-size:9px;letter-spacing:.18em;text-transform:uppercase;
-
       color:var(--ink-muted);
-
     }
 
     .booth-company{
-
       font-family:'Big Shoulders Display',sans-serif;
-
       font-size:15px;font-weight:900;text-transform:uppercase;
-
       line-height:1;color:var(--ink);
-
     }
 
     .booth-company.empty{
-
       font-family:'Source Sans 3',sans-serif;
-
       font-size:12px;font-weight:400;
-
       text-transform:none;color:var(--ink-faint);
-
       letter-spacing:.06em;
-
     }
 
     .booth-size{
-
       font-size:11px;color:var(--ink-muted);margin-top:auto;
-
     }
 
-
-
     .booth-status{
-
       position:absolute;top:10px;right:10px;
-
       width:6px;height:6px;border-radius:50%;
-
     }
 
     .booth-status.available{background:var(--ink-faint);}
@@ -1268,60 +783,38 @@
 
     .booth-status.payment-assigned{background:var(--s-payment);}
 
-
-
-    /* Booth assign modal */
+    /* --- Booth assign modal --- */
 
     .assign-modal{
-
       position:fixed;inset:0;z-index:100;
-
       display:none;align-items:center;justify-content:center;
-
       background:rgba(7,7,8,.7);backdrop-filter:blur(8px);
-
     }
 
     .assign-modal.show{display:flex;}
 
     .assign-modal-box{
-
       background:var(--night-deep);
-
       border:1px solid var(--border-md);
-
       padding:36px 40px;
-
       width:480px;max-width:90vw;
-
     }
 
     .am-title{
-
       font-family:'Big Shoulders Display',sans-serif;
-
       font-size:24px;font-weight:900;text-transform:uppercase;
-
       margin-bottom:6px;
-
     }
 
     .am-sub{font-size:13px;color:var(--ink-muted);margin-bottom:24px;}
 
     .am-select{
-
       width:100%;background:var(--night);
-
       border:1px solid var(--border-md);color:var(--ink);
-
       font-family:'Source Sans 3',sans-serif;
-
       font-size:14px;padding:12px 14px;outline:none;
-
       -webkit-appearance:none;margin-bottom:20px;
-
       transition:border-color .18s;
-
     }
 
     .am-select:focus{border-color:var(--brass);}
@@ -1330,204 +823,340 @@
 
     .am-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:8px;}
 
-
-
-    /* Revision compose area */
+    /* --- Revision compose area --- */
 
     .dp-actions{
-
       padding:20px 32px;
-
       border-top:1px solid var(--border);
-
       display:flex;flex-direction:column;gap:0;flex-shrink:0;
-
     }
 
     .dp-action-row{
-
       display:flex;gap:10px;flex-wrap:wrap;
-
       align-items:center;
-
     }
 
     .dp-compose{
-
       display:none;flex-direction:column;gap:0;
-
       overflow:hidden;
-
       max-height:0;
-
       transition:max-height .32s cubic-bezier(.25,.46,.45,.94);
-
     }
 
     .dp-compose.open{
-
       display:flex;
-
       max-height:400px;
-
     }
 
     .dp-compose-header{
-
       display:flex;align-items:center;justify-content:space-between;
-
       padding:16px 0 10px;
-
       border-top:1px solid var(--border);
-
       margin-top:14px;
-
     }
 
     .dp-compose-title{
-
       font-size:10px;letter-spacing:.2em;text-transform:uppercase;
-
       color:var(--brass);
-
     }
 
     .dp-compose-close{
-
       font-size:10px;letter-spacing:.12em;text-transform:uppercase;
-
       color:var(--ink-muted);background:none;border:none;
-
       cursor:pointer;padding:0;transition:color .18s;
-
     }
 
     .dp-compose-close:hover{color:var(--ink);}
 
     .dp-compose-to{
-
       font-size:12px;color:var(--ink-muted);
-
       margin-bottom:10px;
-
       padding-bottom:8px;
-
       border-bottom:1px solid var(--border);
-
     }
 
     .dp-compose-to span{color:var(--ink);}
 
     .dp-compose-subject{
-
       font-size:12px;color:var(--ink-muted);
-
       margin-bottom:10px;
-
       padding-bottom:8px;
-
       border-bottom:1px solid var(--border);
-
     }
 
     .dp-compose-subject span{color:var(--ink);}
 
     .dp-compose-body{
-
       width:100%;
-
       background:rgba(240,237,230,.03);
-
       border:1px solid var(--border-md);
-
       color:var(--ink);
-
       font-family:'Source Sans 3',sans-serif;
-
       font-size:13px;line-height:1.65;
-
       padding:12px 14px;outline:none;resize:none;
-
       min-height:120px;
-
       transition:border-color .18s;
-
     }
 
     .dp-compose-body:focus{border-color:var(--brass);}
 
     .dp-compose-footer{
-
       display:flex;align-items:center;justify-content:space-between;
-
       padding-top:12px;
-
     }
 
     .dp-compose-note{
-
       font-size:11px;color:var(--ink-muted);
-
     }
 
     .dp-compose-actions{display:flex;gap:10px;}
 
-
-
     /* -------------------------------------------------- */
 
     .proto-tag{
-
       font-size:9px;font-weight:700;letter-spacing:.16em;
-
       text-transform:uppercase;padding:3px 10px;
-
       background:rgba(184,146,64,.15);
-
       color:var(--brass-bright);
-
       border:1px solid rgba(184,146,64,.3);
-
     }
 
+    
+    /* ==================================================
+       RESPONSIVE & MOBILE NAVIGATION STYLES
+    ================================================== */
+    .menu-btn{
+      display:none;
+      flex-direction:column;
+      justify-content:center;
+      gap:4px;
+      width:36px;height:36px;
+      background:rgba(240,237,230,.06);
+      border:1px solid var(--border-md);
+      cursor:pointer;
+      padding:8px;
+      flex-shrink:0;
+    }
+    .menu-btn span{
+      display:block;width:100%;height:2px;
+      background:var(--ink);transition:all .2s;
+    }
+    .menu-btn:hover{background:rgba(240,237,230,.12);}
 
+    .sb-backdrop{
+      display:none;position:fixed;inset:0;
+      background:rgba(0,0,0,.75);backdrop-filter:blur(4px);
+      z-index:90;
+    }
+    .sb-backdrop.show{display:block;}
 
-    /* Responsive */
+    /* Mobile Bottom Navigation Bar */
+    .mobile-bottom-nav{
+      display:none;
+      position:fixed;
+      bottom:0;left:0;right:0;
+      height:60px;
+      background:rgba(10,10,12,.95);
+      backdrop-filter:blur(16px);
+      border-top:1px solid var(--border-md);
+      z-index:80;
+      justify-content:space-around;
+      align-items:center;
+      padding:0 8px;
+    }
+    .mb-nav-item{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:3px;
+      background:none;
+      border:none;
+      color:var(--ink-muted);
+      cursor:pointer;
+      padding:6px 12px;
+      font-family:'Source Sans 3',sans-serif;
+      position:relative;
+      flex:1;
+      transition:color .18s;
+    }
+    .mb-nav-item.active{
+      color:var(--brass-bright);
+    }
+    .mb-nav-icon{
+      font-size:16px;
+      line-height:1;
+    }
+    .mb-nav-label{
+      font-size:9.5px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-weight:600;
+    }
+    .mb-nav-badge{
+      position:absolute;
+      top:4px;right:calc(50% - 18px);
+      background:var(--brass);
+      color:var(--night-deep);
+      font-size:9px;
+      font-weight:700;
+      min-width:15px;height:15px;
+      border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      padding:0 3px;
+    }
 
-    @media(max-width:1100px){
+    /* Tablet & Mobile (< 900px) */
+    @media(max-width:900px){
+      .menu-btn{display:flex;}
+      .mobile-bottom-nav{display:flex;}
 
+      .sidebar{
+        position:fixed;top:0;left:0;bottom:0;
+        width:280px;
+        transform:translateX(-100%);
+        transition:transform .28s cubic-bezier(.25,.46,.45,.94);
+        z-index:100;
+        box-shadow:none;
+      }
+      .sidebar.open{
+        transform:translateX(0);
+        box-shadow:12px 0 40px rgba(0,0,0,.9);
+      }
+
+      .main{
+        margin-left:0 !important;
+        width:100% !important;
+        padding-bottom:70px; /* space for bottom nav */
+      }
+      .topbar{
+        padding:0 18px;
+        height:56px;
+      }
+      .view{
+        padding:22px 18px 80px;
+      }
       .ov-grid{grid-template-columns:1fr;}
-
-      .metrics{grid-template-columns:repeat(2,1fr);}
-
+      .metrics{grid-template-columns:repeat(2,1fr);gap:12px;}
       .fp-grid.hall-a{grid-template-columns:repeat(2,1fr);}
-
       .fp-grid.hall-b{grid-template-columns:repeat(3,1fr);}
-
+      .detail-panel{width:100%;max-width:100vw;}
     }
 
+    /* Mobile (< 768px) */
     @media(max-width:768px){
+      .topbar-title{font-size:16px;}
+      .proto-tag{display:none;}
+      .topbar-link{font-size:10px;}
+      .topbar-link.primary{padding:6px 12px;font-size:10px;}
 
-      .sidebar{width:0;overflow:hidden;}
+      /* Filter chips swipe tray on mobile */
+      .app-filters{
+        display:flex;
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+        width:100%;
+        max-width:100%;
+        padding:4px;
+        margin-bottom:20px;
+      }
+      .app-filter{
+        padding:8px 14px;
+        font-size:10px;
+        flex-shrink:0;
+      }
 
-      .main{margin-left:0;}
+      /* Applications Table -> Mobile Card Mode */
+      .app-table thead{display:none;}
+      .app-table, .app-table tbody, .app-table tr, .app-table td{
+        display:block;width:100%;box-sizing:border-box;
+      }
+      .app-row{
+        background:var(--night-deep);
+        border:1px solid var(--border);
+        padding:16px;
+        margin-bottom:12px;
+        position:relative;
+        transition:border-color .18s;
+      }
+      .app-row:hover{
+        border-color:var(--border-md);
+        background:rgba(240,237,230,.03);
+      }
+      .app-row td{
+        padding:3px 0;
+        border:none;
+        font-size:12px;
+      }
+      .app-row td:first-child{
+        margin-bottom:8px;
+        padding-bottom:6px;
+        border-bottom:1px solid rgba(240,237,230,.05);
+      }
+      .app-row td:nth-child(2)::before{content:'Package: ';color:var(--ink-muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em;}
+      .app-row td:nth-child(3)::before{content:'Space: ';color:var(--ink-muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em;}
+      .app-row td:nth-child(4){
+        font-size:14px;font-weight:700;color:var(--brass-bright);margin:4px 0;
+      }
+      .app-row td:nth-child(5)::before{content:'Submitted: ';color:var(--ink-muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em;}
+      .app-row td:nth-child(6){
+        margin-top:6px;
+      }
+      .app-row td:last-child{
+        position:absolute;top:16px;right:16px;padding:0;width:auto;
+      }
+      .app-row-action{
+        opacity:1;
+        font-size:11px;
+        color:var(--brass-bright);
+        font-weight:600;
+      }
 
-      .detail-panel{width:100%;}
-
+      /* Floor plan responsive */
+      .fp-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:14px;
+      }
+      .fp-legend{
+        flex-wrap:wrap;
+        gap:10px 14px;
+      }
+      .fp-grid.hall-a, .fp-grid.hall-b{
+        grid-template-columns:repeat(2,1fr);
+        gap:8px;
+      }
+      .booth{
+        min-height:90px;
+        padding:12px 10px;
+      }
+      .booth-company{font-size:13px;}
     }
 
+    /* Small Mobile (< 480px) */
+    @media(max-width:480px){
+      .metrics{grid-template-columns:1fr;gap:10px;}
+      .metric{padding:14px;}
+      .metric-value{font-size:26px;}
+      .fp-grid.hall-a, .fp-grid.hall-b{grid-template-columns:1fr;}
+      .topbar{padding:0 14px;}
+      .view{padding:20px 14px 80px;}
+      .dp-header{padding:20px 18px;}
+      .dp-body{padding:20px 18px;}
+      .dp-actions{padding:16px 18px;}
+      .dp-action-row{flex-direction:column;align-items:stretch;}
+      .dp-action-row .btn{width:100%;text-align:center;justify-content:center;}
+    }
   </style>
 
 </head>
 
 <body>
 
+<!-- === SIDEBAR === -->
 
-
-
-
-<!-- SIDEBAR -->
-
+<div class="sb-backdrop" id="sb-backdrop" onclick="closeSidebar()"></div>
 <aside class="sidebar">
 
   <div class="sb-logo">
@@ -1538,8 +1167,6 @@
 
   </div>
 
-
-
   <div class="sb-event">
 
     <div class="sb-event-label">Active Event</div>
@@ -1549,8 +1176,6 @@
     <div class="sb-event-date" id="sb-event-date">7&ndash;9 Jan 2027 &middot; Spring / Summer</div>
 
   </div>
-
-
 
   <nav class="sb-nav">
 
@@ -1576,8 +1201,6 @@
 
     </button>
 
-
-
     <div class="sb-nav-group">Reports</div>
 
     <button class="sb-item" onclick="switchView('analytics',this)">
@@ -1585,8 +1208,6 @@
       Analytics
 
     </button>
-
-
 
     <div class="sb-nav-group">Events</div>
 
@@ -1610,8 +1231,6 @@
 
   </nav>
 
-
-
   <div class="sb-footer">
 
     <div class="sb-user-name">Layla Al Hassan</div>
@@ -1622,20 +1241,18 @@
 
 </aside>
 
-
-
-<!-- MAIN -->
+<!-- === MAIN === -->
 
 <main class="main">
 
-
-
-  <!-- Top Bar -->
+  <!-- === Top Bar === -->
 
   <header class="topbar">
 
     <div class="topbar-left">
-
+      <button class="menu-btn" id="menu-btn" onclick="toggleSidebar()" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
       <div class="topbar-title" id="topbar-title">Overview</div>
 
     </div>
@@ -1652,15 +1269,7 @@
 
   </header>
 
-
-
-
-
-  <!--   &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;   
-
-       VIEW: OVERVIEW
-
-    &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;    -->
+  <!-- &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; VIEW: OVERVIEW &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; -->
 
   <div class="view active" id="view-overview">
 
@@ -1674,9 +1283,7 @@
 
     </div>
 
-
-
-    <!-- Metrics -->
+    <!-- === Metrics === -->
 
     <div class="metrics">
 
@@ -1728,11 +1335,9 @@
 
     </div>
 
-
-
     <div class="ov-grid">
 
-      <!-- Pipeline -->
+      <!-- === Pipeline === -->
 
       <div class="panel">
 
@@ -1740,15 +1345,13 @@
 
         <div class="pipeline" id="ov-pipeline">
 
-          <!-- Rendered by JS -->
+          <!-- === Rendered by JS === -->
 
         </div>
 
       </div>
 
-
-
-      <!-- Activity -->
+      <!-- === Activity === -->
 
       <div class="panel">
 
@@ -1756,7 +1359,7 @@
 
         <div class="activity" id="ov-activity">
 
-          <!-- Rendered by JS -->
+          <!-- === Rendered by JS === -->
 
         </div>
 
@@ -1766,13 +1369,7 @@
 
   </div>
 
-
-
-  <!--   &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;   
-
-       VIEW: APPLICATIONS
-
-    &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;    -->
+  <!-- &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; VIEW: APPLICATIONS &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; -->
 
   <div class="view" id="view-applications">
 
@@ -1784,9 +1381,7 @@
 
     </div>
 
-
-
-    <!-- Filter chips -->
+    <!-- === Filter chips === -->
 
     <div class="app-filters">
 
@@ -1852,8 +1447,6 @@
 
     </div>
 
-
-
     <table class="app-table">
 
       <thead>
@@ -1880,7 +1473,7 @@
 
       <tbody id="app-tbody">
 
-        <!-- Injected by JS -->
+        <!-- === Injected by JS === -->
 
       </tbody>
 
@@ -1888,13 +1481,7 @@
 
   </div>
 
-
-
-  <!--   &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;   
-
-       VIEW: FLOOR PLAN
-
-    &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;    -->
+  <!-- &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; VIEW: FLOOR PLAN &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; -->
 
   <div class="view" id="view-floorplan">
 
@@ -1924,39 +1511,29 @@
 
     </div>
 
-
-
-    <!-- Hall A -->
+    <!-- === Hall A === -->
 
     <div class="fp-hall-label">Hall A      &mdash; Main Exhibition Hall</div>
 
     <div class="fp-grid hall-a" id="hall-a">
 
-      <!-- Injected by JS -->
+      <!-- === Injected by JS === -->
 
     </div>
 
-
-
-    <!-- Hall B -->
+    <!-- === Hall B === -->
 
     <div class="fp-hall-label">Hall B      &mdash; Luxury Galleries</div>
 
     <div class="fp-grid hall-b" id="hall-b">
 
-      <!-- Injected by JS -->
+      <!-- === Injected by JS === -->
 
     </div>
 
   </div>
 
-
-
-  <!--   &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;   
-
-       VIEW: ANALYTICS (placeholder)
-
-    &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;     &mdash;    -->
+  <!-- &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; VIEW: ANALYTICS (placeholder) &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; -->
 
   <div class="view" id="view-analytics">
 
@@ -1980,25 +1557,13 @@
 
   </div>
 
-
-
 </main><!-- /main -->
 
-
-
-
-
-<!--      &middot; PANEL OVERLAY
-
-     &middot; -->
+<!-- === PANEL OVERLAY === -->
 
 <div class="panel-overlay" id="panel-overlay" onclick="closePanel()"></div>
 
-
-
-<!--      &middot; DETAIL PANEL
-
-     &middot; -->
+<!-- === DETAIL PANEL === -->
 
 <div class="detail-panel" id="detail-panel">
 
@@ -2018,8 +1583,6 @@
 
   </div>
 
-
-
   <div class="dp-tabs">
 
     <button class="dp-tab active" onclick="switchTab('company',this)">Company</button>
@@ -2030,11 +1593,9 @@
 
   </div>
 
-
-
   <div class="dp-body">
 
-    <!-- Company Tab -->
+    <!-- === Company Tab === -->
 
     <div class="dp-tab-pane active" id="tab-company">
 
@@ -2074,8 +1635,6 @@
 
       </div>
 
-
-
       <div class="dp-section-title">Exhibition Request</div>
 
       <div class="dp-field-grid">
@@ -2114,8 +1673,6 @@
 
       </div>
 
-
-
       <div class="dp-section-title">Primary Contact</div>
 
       <div class="dp-field-grid">
@@ -2138,8 +1695,6 @@
 
       </div>
 
-
-
       <div class="dp-field">
 
         <div class="dp-field-label">Brand Description</div>
@@ -2150,9 +1705,7 @@
 
     </div>
 
-
-
-    <!-- Documents Tab -->
+    <!-- === Documents Tab === -->
 
     <div class="dp-tab-pane" id="tab-documents">
 
@@ -2224,9 +1777,7 @@
 
     </div>
 
-
-
-    <!-- Notes Tab -->
+    <!-- === Notes Tab === -->
 
     <div class="dp-tab-pane" id="tab-notes">
 
@@ -2248,15 +1799,13 @@
 
   </div>
 
-
-
-  <!-- Actions -->
+  <!-- === Actions === -->
 
   <div class="dp-actions" id="dp-actions">
 
     <div class="dp-action-row" id="dp-action-row">
 
-      <!-- Injected based on status -->
+      <!-- === Injected based on status === -->
 
     </div>
 
@@ -2296,11 +1845,7 @@
 
 </div>
 
-
-
-<!--      &middot; ASSIGN MODAL
-
-     &middot; -->
+<!-- === ASSIGN MODAL === -->
 
 <div class="assign-modal" id="assign-modal">
 
@@ -2336,13 +1881,7 @@
 
 </div>
 
-
-
-
-
-<!--      &middot; JAVASCRIPT
-
-     &middot; -->
+<!-- === JAVASCRIPT === -->
 
 <script>
 
@@ -2351,503 +1890,280 @@
      &middot; */
 
 const EVENT_DATA = {
-
-
-
   bfw: {
-
     id: 'bfw',
-
     name: 'Bahrain Fashion Week',
-
     subtitle: '7&ndash;9 Jan 2027 &middot; Spring / Summer',
-
     eyebrow: 'Bahrain Fashion Week &middot; 7&ndash;9 Jan 2027',
-
     venue: 'Raffles Al Areen Palace',
-
     metrics: {
-
       total: 12, totalSub: '         3 this week',
-
       revenue: '31,820', revenueSub: '         BHD 4,560 pending',
-
       booked: '71%', bookedSub: '213 of 300 sqm taken', bookedRem: '         87 sqm remaining',
-
       review: 3
 
     },
-
     activity: [
 
       { color:'var(--s-approved)',  text:'<span class="act-co">Milano Luxury Group</span> approved. Booth A1 assigned.',       time:'2 hours ago &middot; Layla Al Hassan' },
-
       { color:'var(--s-confirmed)', text:'<span class="act-co">Grand Textiles UAE</span> deposit received      &mdash; BHD 6,840. Confirmed.', time:'Yesterday, 14:22 &middot; Auto' },
-
       { color:'var(--brass)',       text:'New application from <span class="act-co">Maison Al Rashid</span>      &mdash; Stand Service, 24 m  2.', time:'Yesterday, 09:10 &middot; System' },
-
       { color:'var(--s-rejected)',  text:'<span class="act-co">Al Nour Collections</span> rejected      &mdash; category mismatch.',       time:'2 days ago &middot; Tariq Al Yusuf' },
-
       { color:'var(--s-approved)',  text:'<span class="act-co">Ch  &middot; ri Paris</span> approved. Invoice BHD 3,420 sent.',           time:'3 days ago &middot; Layla Al Hassan' },
-
     ],
-
     apps: [
 
       { id:'A001', company:'Maison Al Rashid',    country:'Bahrain',       industry:'Fashion & Apparel',     contact:'Sara Al Rashid',   email:'sara@maison-alrashid.bh',    website:'maison-alrashid.bh',  pkg:'Stand Service',     sqm:24, rate:380, date:'25 Sep 2026', status:'review',    desc:'A Bahraini luxury fashion house specialising in contemporary abayas and modest couture.' },
-
       { id:'A002', company:'Milano Luxury Group', country:'Italy',          industry:'Fashion & Apparel',     contact:'Marco Ferretti',   email:'m.ferretti@milanoluxury.it', website:'milanoluxury.it',     pkg:'Space Only',        sqm:36, rate:250, date:'23 Sep 2026', status:'approved',  desc:'Milan-based fashion conglomerate representing 6 Italian luxury ready-to-wear brands.' },
-
       { id:'A003', company:'House of Adel',       country:'Kuwait',         industry:'Jewellery & Watches',   contact:'Adel Al Sabah',    email:'adel@houseofadel.kw',        website:'houseofadel.kw',      pkg:'Stand Service',     sqm:12, rate:380, date:'22 Sep 2026', status:'payment',   desc:'Kuwaiti fine jewellery house known for pearl-set and gold pieces with Gulf heritage design.' },
-
       { id:'A004', company:'Ch  &middot; ri Paris',         country:'France',         industry:'Cosmetics & Skincare',  contact:'Am  &middot; lie Dubois',    email:'a.dubois@cheriparis.fr',     website:'cheriparis.fr',       pkg:'Stand Service',     sqm:18, rate:380, date:'20 Sep 2026', status:'approved',  desc:'Parisian niche perfume and skincare brand entering the GCC market for the first time.' },
-
       { id:'A005', company:'Al Nour Collections', country:'Saudi Arabia',   industry:'Fashion & Apparel',     contact:'Noura Al Malik',   email:'info@alnour.sa',             website:'alnour.sa',           pkg:'Stand Service',     sqm:9,  rate:380, date:'18 Sep 2026', status:'rejected',  desc:'Saudi ready-to-wear brand.' },
-
       { id:'A006', company:'Grand Textiles UAE',  country:'UAE',            industry:'Fashion & Apparel',     contact:'Omar Khaled',      email:'omar@grandtextiles.ae',      website:'grandtextiles.ae',    pkg:'Space Only',        sqm:36, rate:250, date:'15 Sep 2026', status:'confirmed', desc:'Regional textile and fabric house supplying premium fabrics to designers across the Gulf.' },
-
       { id:'A007', company:'Luxe Arabia',         country:'Qatar',          industry:'Accessories & Leather', contact:'Fatima Al Thani',  email:'f.althani@luxearabia.qa',    website:'luxearabia.qa',       pkg:'Stand Service',     sqm:12, rate:380, date:'14 Sep 2026', status:'review',    desc:'Qatari luxury accessories brand specialising in handcrafted leather goods.' },
-
       { id:'A008', company:'Bespoke London',      country:'United Kingdom', industry:'Fashion & Apparel',     contact:'James Harrington', email:'james@bespokelondon.co.uk',  website:'bespokelondon.co.uk', pkg:'Signature Sponsor', sqm:0,  rate:0,  date:'12 Sep 2026', status:'review',    desc:'British heritage tailoring house proposing a headline sponsorship of BFW 2027.' },
-
       { id:'A009', company:'Moda Kuwait',         country:'Kuwait',         industry:'Fashion & Apparel',     contact:'Lina Al Jaber',    email:'lina@modakuwait.kw',         website:'modakuwait.kw',       pkg:'Stand Service',     sqm:18, rate:380, date:'10 Sep 2026', status:'confirmed', desc:'One of Kuwait\'s top multi-brand fashion retail groups.' },
-
       { id:'A010', company:'Al Bahar Couture',    country:'Bahrain',        industry:'Fashion & Apparel',     contact:'Mariam Al Bahar',  email:'info@albahar.bh',            website:'albahar.bh',          pkg:'Stand Service',     sqm:24, rate:380, date:'08 Sep 2026', status:'approved',  desc:'Bahraini haute couture house with 20 years of history dressing the Kingdom\'s elite.' },
-
       { id:'A011', company:'Fusion Textiles',     country:'India',          industry:'Fashion & Apparel',     contact:'Raj Mehta',        email:'raj@fusiontextiles.in',      website:'fusiontextiles.in',   pkg:'Space Only',        sqm:24, rate:250, date:'05 Sep 2026', status:'payment',   desc:'Indian textile manufacturer exporting embroidered fabrics to Gulf designers.' },
-
       { id:'A012', company:'Luxhaven Group',      country:'UAE',            industry:'Accessories & Leather', contact:'Ahmed Al Farsi',   email:'ahmed@luxhaven.ae',          website:'luxhaven.ae',         pkg:'Stand Service',     sqm:18, rate:380, date:'03 Sep 2026', status:'confirmed', desc:'UAE-based multi-brand luxury accessories distributor representing 8 European labels.' },
-
     ],
-
     hallA: [
 
       { id:'A1', sqm:36, company:'Milano Luxury Group', status:'approved-assigned',  appId:'A002' },
-
       { id:'A2', sqm:36, company:'Grand Textiles UAE',  status:'confirmed-assigned', appId:'A006' },
-
       { id:'A3', sqm:18, company:'Ch  &middot; ri Paris',         status:'approved-assigned',  appId:'A004' },
-
       { id:'A4', sqm:24, company:null,                  status:'available',          appId:null   },
-
     ],
-
     hallB: [
 
       { id:'B1', sqm:12, company:null,              status:'available',          appId:null   },
-
       { id:'B2', sqm:12, company:'House of Adel',   status:'payment-assigned',   appId:'A003' },
-
       { id:'B3', sqm:18, company:'Moda Kuwait',     status:'confirmed-assigned', appId:'A009' },
-
       { id:'B4', sqm:18, company:null,              status:'available',          appId:null   },
-
       { id:'B5', sqm:24, company:'Al Bahar Couture',status:'approved-assigned',  appId:'A010' },
-
     ],
-
     hallALabel: 'Hall A      &mdash; Main Exhibition Hall',
-
     hallBLabel: 'Hall B      &mdash; Luxury Galleries',
-
     fpVenue: 'Raffles Al Areen Palace',
-
   },
-
-
-
   swe: {
-
     id: 'swe',
-
     name: 'Sea World Expo',
-
     subtitle: '14&ndash;16 Mar 2028 &middot; 2nd Edition',
-
     eyebrow: 'Sea World Expo &middot; 14&ndash;16 Mar 2028',
-
     venue: 'Bahrain Marina Complex',
-
     metrics: {
-
       total: 8, totalSub: '         2 this month',
-
       revenue: '17,280', revenueSub: '         BHD 5,040 pending',
-
       booked: '48%', bookedSub: '144 of 300 sqm taken', bookedRem: '         156 sqm remaining',
-
       review: 2
 
     },
-
     activity: [
 
       { color:'var(--brass)',       text:'New application from <span class="act-co">Meridian Yachts</span>      &mdash; Marina Boat Show sponsor.', time:'1 hour ago &middot; System' },
-
       { color:'var(--s-approved)',  text:'<span class="act-co">Pacific Marine Systems</span> approved. Invoice BHD 4,320 sent.',          time:'Yesterday, 11:14 &middot; Tariq Al Yusuf' },
-
       { color:'var(--s-confirmed)', text:'<span class="act-co">Ocean Blue Marine</span> deposit received      &mdash; BHD 3,780. Confirmed.',        time:'2 days ago &middot; Auto' },
-
       { color:'var(--s-rejected)',  text:'<span class="act-co">Gulf Diving Centre</span> rejected      &mdash; incomplete documentation.',           time:'3 days ago &middot; Layla Al Hassan' },
-
       { color:'var(--s-approved)',  text:'<span class="act-co">BlueTech Solutions</span> approved. Booth M2 assigned.',                   time:'4 days ago &middot; Tariq Al Yusuf' },
-
     ],
-
     apps: [
 
       { id:'S001', company:'Ocean Blue Marine',     country:'Bahrain',      industry:'Marine & Nautical',   contact:'Khalid Al Dosari',  email:'k.dosari@oceanbluemarine.bh',   website:'oceanbluemarine.bh',   pkg:'Stand Service',     sqm:18, rate:105, date:'12 Oct 2027', status:'confirmed', desc:'Bahraini marine services company offering diving, chartering, and marine equipment across the Gulf.' },
-
       { id:'S002', company:'Meridian Yachts',       country:'UAE',          industry:'Yachts & Superyachts', contact:'Hassan Al Mansoori',email:'h.mansoori@meridianyachts.ae', website:'meridianyachts.ae',    pkg:'Signature Sponsor', sqm:0,  rate:0,  date:'10 Oct 2027', status:'review',    desc:'UAE-based superyacht dealer and marina developer seeking title sponsorship of Sea World Expo 2028.' },
-
       { id:'S003', company:'Pacific Marine Systems',country:'Japan',         industry:'Marine Technology',   contact:'Kenji Watanabe',    email:'k.watanabe@pacificmarine.jp',   website:'pacificmarine.jp',     pkg:'Space Only',        sqm:36, rate:80,  date:'08 Oct 2027', status:'approved',  desc:'Japanese manufacturer of sonar, navigation, and underwater robotics systems.' },
-
       { id:'S004', company:'Red Sea Adventures',    country:'Saudi Arabia',  industry:'Water Sports & Diving',contact:'Reem Al Qahtani',  email:'reem@redsea-adventures.sa',     website:'redsea-adventures.sa', pkg:'Stand Service',     sqm:12, rate:105, date:'05 Oct 2027', status:'review',    desc:'Saudi dive and water sports company operating in the Red Sea and Arabian Gulf.' },
-
       { id:'S005', company:'BlueTech Solutions',    country:'United Kingdom',industry:'Marine Technology',   contact:'David Clarke',      email:'d.clarke@bluetechsol.co.uk',    website:'bluetechsol.co.uk',    pkg:'Stand Service',     sqm:18, rate:105, date:'01 Oct 2027', status:'approved',  desc:'British marine technology firm specialising in underwater drones and remote sensing.' },
-
       { id:'S006', company:'Gulf Fishing Federation',country:'Qatar',        industry:'Fishing & Aquaculture',contact:'Saeed Al Marri',   email:'s.almarri@gulfffishing.qa',     website:'gulfffishing.qa',      pkg:'Space Only',        sqm:24, rate:80,  date:'28 Sep 2027', status:'payment',   desc:'Qatari federation promoting traditional fishing and sustainable aquaculture across the GCC.' },
-
       { id:'S007', company:'NavalTech Arabia',      country:'Bahrain',       industry:'Marine Technology',   contact:'Faris Al Khalifa',  email:'faris@navaltech.bh',            website:'navaltech.bh',         pkg:'Stand Service',     sqm:12, rate:105, date:'25 Sep 2027', status:'confirmed', desc:'Bahraini naval technology consultancy supporting the Royal Bahrain Naval Force and regional clients.' },
-
       { id:'S008', company:'Marina World',          country:'France',        industry:'Yachts & Superyachts', contact:'Claire Moreau',    email:'c.moreau@marinaworld.fr',       website:'marinaworld.fr',       pkg:'Stand Service',     sqm:24, rate:105, date:'20 Sep 2027', status:'payment',   desc:'French marina design and management company with 40+ marina projects worldwide.' },
-
     ],
-
     hallA: [
 
       { id:'M1', sqm:36, company:'Pacific Marine Systems', status:'approved-assigned',  appId:'S003' },
-
       { id:'M2', sqm:18, company:'BlueTech Solutions',     status:'approved-assigned',  appId:'S005' },
-
       { id:'M3', sqm:18, company:'Ocean Blue Marine',      status:'confirmed-assigned', appId:'S001' },
-
       { id:'M4', sqm:24, company:null,                     status:'available',          appId:null   },
-
     ],
-
     hallB: [
 
       { id:'D1', sqm:12, company:'NavalTech Arabia',      status:'confirmed-assigned', appId:'S007' },
-
       { id:'D2', sqm:24, company:'Gulf Fishing Federation',status:'payment-assigned',  appId:'S006' },
-
       { id:'D3', sqm:12, company:'Red Sea Adventures',    status:'review-assigned',    appId:'S004' },
-
       { id:'D4', sqm:24, company:'Marina World',          status:'payment-assigned',   appId:'S008' },
-
       { id:'D5', sqm:24, company:null,                    status:'available',          appId:null   },
-
     ],
-
     hallALabel: 'Main Pavilion      &mdash; Indoor Exhibits',
-
     hallBLabel: 'Marina Dock      &mdash; Outdoor & Waterfront',
-
     fpVenue: 'Bahrain Marina Complex',
-
   },
-
-
-
   gfex: {
-
     id: 'gfex',
-
     name: 'Global Furniture Expo',
-
     subtitle: '22&ndash;25 Sep 2027 &middot; 1st Edition',
-
     eyebrow: 'Global Furniture Expo &middot; 22&ndash;25 Sep 2027',
-
     venue: 'Exhibition World Bahrain',
-
     metrics: {
-
       total: 6, totalSub: '         1 this week',
-
       revenue: '24,300', revenueSub: '         BHD 7,200 pending',
-
       booked: '44%', bookedSub: '132 of 300 sqm taken', bookedRem: '         168 sqm remaining',
-
       review: 1
 
     },
-
     activity: [
 
       { color:'var(--s-approved)',  text:'<span class="act-co">Casa Milano</span> approved. Booth F1 assigned. Invoice sent.',    time:'3 hours ago &middot; Layla Al Hassan' },
-
       { color:'var(--brass)',       text:'New application from <span class="act-co">Al Rahhal Furniture</span>      &mdash; Stand Service, 18 m  2.', time:'Yesterday, 16:30 &middot; System' },
-
       { color:'var(--s-confirmed)', text:'<span class="act-co">Majlis Interiors</span> deposit received      &mdash; BHD 7,200. Confirmed.', time:'2 days ago &middot; Auto' },
-
       { color:'var(--s-approved)',  text:'<span class="act-co">Oriental Crafts</span> approved. Awaiting deposit.',               time:'3 days ago &middot; Tariq Al Yusuf' },
-
       { color:'var(--s-payment)',   text:'<span class="act-co">Nordic Home</span> invoice overdue      &mdash; 7 days. Reminder sent.',      time:'4 days ago &middot; Auto' },
-
     ],
-
     apps: [
 
       { id:'G001', company:'Majlis Interiors',    country:'Bahrain',  industry:'Interior Design & Furniture', contact:'Noora Al Sayed',   email:'noora@majlisinteriors.bh',    website:'majlisinteriors.bh',    pkg:'Stand Service', sqm:24, rate:300, date:'18 Aug 2027', status:'confirmed', desc:'Bahraini high-end interior design studio specialising in majlis and hospitality spaces.' },
-
       { id:'G002', company:'Casa Milano',         country:'Italy',    industry:'Luxury Furniture',            contact:'Luca Bernardi',    email:'l.bernardi@casamilo.it',      website:'casamilo.it',           pkg:'Space Only',    sqm:36, rate:250, date:'15 Aug 2027', status:'approved',  desc:'Italian luxury furniture house representing 4 Milanese brands across GCC markets.' },
-
       { id:'G003', company:'Al Rahhal Furniture', country:'Saudi Arabia','industry':'Furniture & Fit-out',   contact:'Tariq Al Rasheed', email:'tariq@alrahhal.sa',           website:'alrahhal.sa',           pkg:'Stand Service', sqm:18, rate:300, date:'10 Aug 2027', status:'review',    desc:'Saudi furniture manufacturer and contractor specialising in large-scale hospitality fit-out.' },
-
       { id:'G004', company:'Nordic Home',         country:'Sweden',   industry:'Scandinavian Design',         contact:'Erik Lindgren',    email:'e.lindgren@nordichome.se',    website:'nordichome.se',         pkg:'Stand Service', sqm:12, rate:300, date:'05 Aug 2027', status:'payment',   desc:'Swedish minimalist furniture brand entering the GCC for the first time via GFEX.' },
-
       { id:'G005', company:'Oriental Crafts',     country:'China',    industry:'Artisan Furniture & D  &middot; cor',   contact:'Wei Zhang',        email:'w.zhang@orientalcrafts.cn',   website:'orientalcrafts.cn',     pkg:'Space Only',    sqm:24, rate:250, date:'28 Jul 2027', status:'approved',  desc:'Chinese artisan furniture studio producing hand-carved and lacquered luxury pieces.' },
-
       { id:'G006', company:'Bahrain Hospitality', country:'Bahrain',  industry:'Hospitality & Contract Furn.',contact:'Ali Al Jishi',    email:'ali@bahrainh.bh',             website:'bahrainhospitality.bh', pkg:'Stand Service', sqm:36, rate:300, date:'20 Jul 2027', status:'confirmed', desc:'Bahraini contract furniture supplier to hotels, resorts, and commercial spaces.' },
-
     ],
-
     hallA: [
 
       { id:'F1', sqm:36, company:'Casa Milano',          status:'approved-assigned',  appId:'G002' },
-
       { id:'F2', sqm:24, company:'Majlis Interiors',     status:'confirmed-assigned', appId:'G001' },
-
       { id:'F3', sqm:24, company:'Oriental Crafts',      status:'approved-assigned',  appId:'G005' },
-
       { id:'F4', sqm:36, company:'Bahrain Hospitality',  status:'confirmed-assigned', appId:'G006' },
-
     ],
-
     hallB: [
 
       { id:'F5', sqm:18, company:'Al Rahhal Furniture',  status:'review-assigned',    appId:'G003' },
-
       { id:'F6', sqm:12, company:'Nordic Home',          status:'payment-assigned',   appId:'G004' },
-
       { id:'F7', sqm:24, company:null,                   status:'available',          appId:null   },
-
       { id:'F8', sqm:36, company:null,                   status:'available',          appId:null   },
-
       { id:'F9', sqm:24, company:null,                   status:'available',          appId:null   },
-
     ],
-
     hallALabel: 'Hall 1      &mdash; Premium Exhibitors',
-
     hallBLabel: 'Hall 2      &mdash; International & Emerging',
-
     fpVenue: 'Exhibition World Bahrain',
-
   },
-
-
-
 };
-
-
-
-/* Active event state */
+/* --- Active event state --- */
 
 let currentEventId = 'bfw';
-
 let APPS = EVENT_DATA.bfw.apps;
-
-
-
 const STATUS_LABEL = {
-
   review:'Under Review', approved:'Approved',
-
   payment:'Pending Payment', confirmed:'Confirmed', rejected:'Rejected'
 
 };
-
 const PKG_SHORT = {
-
   'Stand Service':'Stand Service',
-
   'Space Only':'Space Only',
-
   'Signature Sponsor':'Sponsorship',
-
 };
-
-
-
-/*      &middot; SWITCH EVENT
-
-     &middot; */
+/* --- SWITCH EVENT --- */
 
 function switchEvent(evId, btn) {
-
+  if (window.innerWidth <= 900) closeSidebar();
   currentEventId = evId;
-
   const ev = EVENT_DATA[evId];
-
   APPS = ev.apps;
-
-
-
   // Sidebar active event highlight
 
   document.querySelectorAll('.sb-event-item').forEach(b => {
-
     b.classList.remove('active-event');
-
     // icon cleared
 
   });
-
   if (btn) {
-
     btn.classList.add('active-event');
-
     // icon set
 
   }
 
-
-
   // Sidebar active event info
 
   setText('sb-event-name', ev.name);
-
   setText('sb-event-date', ev.subtitle);
-
-
-
   // Overview metrics
 
   setText('ov-eyebrow',    ev.eyebrow);
-
   setText('app-eyebrow',   ev.name + ' &middot; ' + ev.subtitle.split(' &middot; ')[0]);
-
   setText('m-total',       ev.metrics.total);
-
   setText('m-total-sub',   ev.metrics.totalSub);
-
   setText('m-revenue',     ev.metrics.revenue);
-
   setText('m-revenue-sub', ev.metrics.revenueSub);
-
   setText('m-booked',      ev.metrics.booked);
-
   setText('m-booked-sub',  ev.metrics.bookedSub);
-
   setText('m-booked-rem',  ev.metrics.bookedRem);
-
   setText('m-review',      ev.metrics.review);
-
-
-
   // Pipeline & activity
 
   renderPipeline(ev.apps);
-
   renderActivity(ev.activity);
-
-
-
   // Filter chips counts
 
   updateFilterCounts(ev.apps);
-
-
-
   // Applications table
 
   currentFilter = 'all';
-
   document.querySelectorAll('.app-filter').forEach(b => b.classList.remove('active'));
-
   const allChip = document.querySelector('.app-filter[data-f="all"]');
-
   if (allChip) allChip.classList.add('active');
-
   renderApps('all');
-
-
-
   // Floor plan
 
   renderFloorPlan();
-
-
-
   // Update revision compose subject line
 
   // (will auto-use ev.name when user opens compose)
 
-
-
   // Badge
 
   updatePendingBadge();
-
-
-
   // Switch to overview
 
   switchView('overview', document.getElementById('nav-overview'));
-
 }
 
-
-
-/*      &middot; NAVIGATION
-
-     &middot; */
+/* --- NAVIGATION --- */
 
 function switchView(view, btn) {
-
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-
-  // Only remove active from management nav items, not event items
-
   document.querySelectorAll('.sb-item:not(.sb-event-item)').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.mb-nav-item').forEach(b => b.classList.remove('active'));
 
-  document.getElementById('view-' + view).classList.add('active');
+  const targetView = document.getElementById('view-' + view);
+  if (targetView) targetView.classList.add('active');
 
-  if (btn) btn.classList.add('active');
+  // Activate matching sidebar item
+  const sbItem = document.getElementById('nav-' + view);
+  if (sbItem) sbItem.classList.add('active');
+
+  // Activate matching mobile bottom nav item
+  const mbItem = document.getElementById('mb-nav-' + view);
+  if (mbItem) mbItem.classList.add('active');
 
   const titles = { overview:'Overview', applications:'Applications', floorplan:'Floor Plan', analytics:'Analytics' };
+  document.getElementById('topbar-title').innerHTML = titles[view] || '';
 
-  document.getElementById('topbar-title').textContent = titles[view] || '';
-
+  if (window.innerWidth <= 900) closeSidebar();
 }
 
-
-
-/*      &middot; PIPELINE
-
-     &middot; */
+/* --- PIPELINE --- */
 
 function renderPipeline(apps) {
-
   const total = apps.length;
-
   const counts = { review:0, approved:0, payment:0, confirmed:0, rejected:0 };
-
   apps.forEach(a => { if (counts[a.status] !== undefined) counts[a.status]++; });
-
-
-
   const rows = [
 
     { label:'Received',        count:total,             color:'var(--ink-faint)', pct:100 },
-
     { label:'Under Review',    count:counts.review,     color:'var(--s-review)',   pct:Math.round(counts.review/total*100) },
-
     { label:'Approved',        count:counts.approved,   color:'var(--s-approved)', pct:Math.round(counts.approved/total*100) },
-
     { label:'Pending Payment', count:counts.payment,    color:'var(--s-payment)',  pct:Math.round(counts.payment/total*100) },
-
     { label:'Confirmed',       count:counts.confirmed,  color:'var(--s-confirmed)',pct:Math.round(counts.confirmed/total*100) },
-
     { label:'Rejected',        count:counts.rejected,   color:'var(--s-rejected)', pct:Math.round(counts.rejected/total*100) },
-
   ];
-
-
-
   document.getElementById('ov-pipeline').innerHTML = rows.map(r => `
 
     <div class="pipe-row">
@@ -2859,17 +2175,11 @@ function renderPipeline(apps) {
       <div class="pipe-count" style="color:${r.color === 'var(--ink-faint)' ? 'var(--ink)' : r.color};">${r.count}</div>
 
     </div>`).join('');
-
 }
 
-
-
-/*      &middot; ACTIVITY
-
-     &middot; */
+/* --- ACTIVITY --- */
 
 function renderActivity(items) {
-
   document.getElementById('ov-activity').innerHTML = items.map(i => `
 
     <div class="act-item">
@@ -2885,39 +2195,22 @@ function renderActivity(items) {
       </div>
 
     </div>`).join('');
-
 }
 
-
-
-/*      &middot; APPLICATION TABLE
-
-     &middot; */
+/* --- APPLICATION TABLE --- */
 
 let currentFilter = 'all';
-
-
-
 function renderApps(filter) {
-
   const list = filter === 'all' ? APPS : APPS.filter(a => a.status === filter);
-
   const tbody = document.getElementById('app-tbody');
-
   if (list.length === 0) {
-
     tbody.innerHTML = `<tr><td colspan="7" style="padding:40px 16px;color:var(--ink-muted);text-align:center;font-size:13px;">No applications in this category.</td></tr>`;
-
     return;
-
   }
 
   tbody.innerHTML = list.map(a => {
-
     const total = a.rate > 0 ? 'BHD ' + (a.rate * a.sqm).toLocaleString() : 'Custom';
-
     const sqmStr = a.sqm > 0 ? a.sqm + ' m&sup2;' : 'Custom';
-
     return `
 
       <tr class="app-row" onclick="openApp('${a.id}')">
@@ -2943,127 +2236,60 @@ function renderApps(filter) {
         <td><span class="app-row-action">Review &rarr;</span></td>
 
       </tr>`;
-
   }).join('');
-
 }
-
-
 
 function filterApps(filter, btn) {
-
   currentFilter = filter;
-
   document.querySelectorAll('.app-filter').forEach(b => b.classList.remove('active'));
-
   btn.classList.add('active');
-
   renderApps(filter);
-
 }
-
-
 
 function updateFilterCounts(apps) {
-
   const counts = { all:apps.length, review:0, approved:0, payment:0, confirmed:0, rejected:0 };
-
   apps.forEach(a => { if (counts[a.status] !== undefined) counts[a.status]++; });
-
   Object.keys(counts).forEach(k => {
-
     const chip = document.querySelector(`.app-filter[data-f="${k}"] .app-filter-count`);
-
     if (chip) chip.textContent = counts[k];
-
   });
-
 }
 
-
-
-/*      &middot; DETAIL PANEL
-
-     &middot; */
+/* --- DETAIL PANEL --- */
 
 let selectedApp = null;
-
-
-
 function openApp(id) {
-
   selectedApp = APPS.find(a => a.id === id);
-
   if (!selectedApp) return;
-
   const a = selectedApp;
-
   const ev = EVENT_DATA[currentEventId];
-
-
-
   setText('dp-name', a.company);
-
   setText('dp-co', a.company);
-
   setText('dp-country', a.country);
-
   setText('dp-industry', a.industry);
-
-  setText('dp-website', a.website || '     &mdash;');
-
+  setText('dp-website', a.website || '&mdash;');
   setText('dp-pkg', a.pkg);
-
   setText('dp-sqm', a.sqm > 0 ? a.sqm + ' m&sup2;' : 'Custom proposal');
-
   setText('dp-total', a.rate > 0 ? 'BHD ' + (a.rate * a.sqm).toLocaleString() : 'Custom');
-
   setText('dp-date', a.date);
-
   setText('dp-contact', a.contact);
-
   setText('dp-email', a.email);
-
   setText('dp-desc', a.desc);
-
-
-
   const sb = document.getElementById('dp-status-badge');
-
   sb.className = 'badge ' + a.status;
-
   sb.textContent = STATUS_LABEL[a.status];
-
-
-
   const pb = document.getElementById('dp-pkg-badge');
-
   pb.textContent = PKG_SHORT[a.pkg] || a.pkg;
-
-
-
   renderActions(a);
-
   switchTab('company', document.querySelector('.dp-tab'));
-
-
-
   document.getElementById('detail-panel').classList.add('open');
-
   document.getElementById('panel-overlay').classList.add('show');
-
 }
 
-
-
 function renderActions(a) {
-
   const el = document.getElementById('dp-action-row');
-
   closeCompose();
-
   if (a.status === 'review') {
-
     el.innerHTML = `
 
       <button class="btn btn-approve" onclick="approveApp('${a.id}')">&check; Approve</button>
@@ -3071,137 +2297,72 @@ function renderActions(a) {
       <button class="btn btn-revise" onclick="showRevisionCompose('${a.id}')">Request Changes</button>
 
       <button class="btn btn-reject" onclick="rejectApp('${a.id}')">Reject</button>`;
-
   } else if (a.status === 'approved') {
-
     el.innerHTML = `
 
       <button class="btn btn-assign" onclick="openAssignModal('${a.id}')">&nearr; Assign Booth</button>
 
       <button class="btn btn-ghost" onclick="alert('Invoice sent to exhibitor.')">Send Invoice</button>`;
-
   } else if (a.status === 'payment') {
-
     el.innerHTML = `
 
       <button class="btn btn-ghost" onclick="alert('Payment reminder sent.')">Send Reminder</button>
 
       <button class="btn btn-approve" onclick="alert('Payment marked as received. Status: Confirmed.')">Mark Paid</button>`;
-
   } else if (a.status === 'confirmed') {
-
     el.innerHTML = `
 
       <button class="btn btn-ghost" onclick="alert('Exhibitor manual and logistics pack sent.')">Send Exhibitor Pack</button>
 
       <button class="btn btn-ghost" onclick="alert('Badge link sent to exhibitor.')">Send Badge Link</button>`;
-
   } else if (a.status === 'rejected') {
-
     el.innerHTML = `<span style="font-size:11px;color:var(--ink-muted);letter-spacing:.1em;text-transform:uppercase;">Application rejected      &mdash; no further actions.</span>`;
-
   } else {
-
     el.innerHTML = '';
-
   }
 
 }
 
-
-
-/*      &middot; REVISION COMPOSE DRAWER
-
-     &middot; */
+/* --- REVISION COMPOSE DRAWER --- */
 
 function showRevisionCompose(appId) {
-
   const app = APPS.find(a => a.id === appId);
-
   if (!app) return;
-
   const evName = EVENT_DATA[currentEventId].name;
-
-
-
   setText('dc-to', `${app.contact} <${app.email}>`);
-
   setText('dc-subject', `Your application to ${evName}      &mdash; Changes Required`);
-
-
-
   const body = document.getElementById('dc-body');
-
   body.value =
 
 `Dear ${app.contact},
-
-
-
 Thank you for submitting your application to exhibit at ${evName}.
 
-
-
-We have reviewed your application and require the following changes before we can proceed:
-
-
-
-     &mdash;
-
-
-
-Please update your application at your earliest convenience. If you have any questions, reply to this message or contact us at info@orka.bh.
-
-
+We have reviewed your application and require the following changes before we can proceed: &mdash; Please update your application at your earliest convenience. If you have any questions, reply to this message or contact us at info@orka.bh.
 
 Warm regards,
-
 ORKA Projects Team`;
-
-
-
   document.getElementById('dp-compose').classList.add('open');
-
-
-
   setTimeout(() => {
-
     const panel = document.getElementById('detail-panel');
-
     panel.scrollTop = panel.scrollHeight;
-
     body.focus();
-
-    const pos = body.value.indexOf('     &mdash;');
-
+    const pos = body.value.indexOf('&mdash;');
     if (pos !== -1) { body.setSelectionRange(pos, pos + 1); }
 
   }, 80);
-
 }
-
-
 
 function closeCompose() {
-
   const compose = document.getElementById('dp-compose');
-
   if (compose) compose.classList.remove('open');
-
 }
 
-
-
 function sendRevision() {
-
   const body = document.getElementById('dc-body').value.trim();
-
   if (!body) { alert('Please write a message before sending.'); return; }
 
   if (!selectedApp) return;
-
   closeCompose();
-
   document.getElementById('dp-action-row').innerHTML = `
 
     <span style="font-size:12px;color:var(--s-approved);letter-spacing:.06em;">
@@ -3209,159 +2370,91 @@ function sendRevision() {
               Revision request sent to exhibitor. Awaiting their response.
 
     </span>`;
-
 }
-
-
 
 function closePanel() {
-
   document.getElementById('detail-panel').classList.remove('open');
-
   document.getElementById('panel-overlay').classList.remove('show');
-
 }
-
-
 
 function approveApp(id) {
-
   const app = APPS.find(a => a.id === id);
-
   if (app) {
-
     app.status = 'approved';
-
     renderActions(app);
-
     const sb = document.getElementById('dp-status-badge');
-
     sb.className = 'badge approved';
-
     sb.textContent = 'Approved';
-
     renderApps(currentFilter);
-
     updatePendingBadge();
-
     updateFilterCounts(APPS);
-
     renderPipeline(APPS);
-
   }
 
 }
-
-
 
 function rejectApp(id) {
-
   const app = APPS.find(a => a.id === id);
-
   if (app && confirm('Reject this application? The exhibitor will be notified.')) {
-
     app.status = 'rejected';
-
     renderActions(app);
-
     const sb = document.getElementById('dp-status-badge');
-
     sb.className = 'badge rejected';
-
     sb.textContent = 'Rejected';
-
     renderApps(currentFilter);
-
     updatePendingBadge();
-
     updateFilterCounts(APPS);
-
     renderPipeline(APPS);
-
   }
 
 }
 
-
-
 function updatePendingBadge() {
-
-  document.getElementById('pending-badge').textContent = APPS.filter(a => a.status === 'review').length;
-
+  const count = APPS.filter(a => a.status === 'review').length;
+  const b1 = document.getElementById('pending-badge');
+  const b2 = document.getElementById('mb-pending-badge');
+  if (b1) b1.textContent = count;
+  if (b2) b2.textContent = count;
 }
 
-
-
-/*      &middot; PANEL TABS
-
-     &middot; */
+/* --- PANEL TABS --- */
 
 function switchTab(tab, btn) {
-
   document.querySelectorAll('.dp-tab').forEach(b => b.classList.remove('active'));
-
   document.querySelectorAll('.dp-tab-pane').forEach(p => p.classList.remove('active'));
-
   if (btn) btn.classList.add('active');
-
   const pane = document.getElementById('tab-' + tab);
-
   if (pane) pane.classList.add('active');
-
 }
 
-
-
-/*      &middot; FLOOR PLAN
-
-     &middot; */
+/* --- FLOOR PLAN --- */
 
 function renderFloorPlan() {
-
   const ev = EVENT_DATA[currentEventId];
-
-  document.querySelector('.fp-header p.ov-eyebrow').textContent = ev.name + ' &middot; ' + ev.fpVenue;
-
+  document.querySelector('.fp-header p.ov-eyebrow').innerHTML = ev.name + ' &middot; ' + ev.fpVenue;
   document.querySelector('#view-floorplan .ov-title').textContent = 'Floor Plan';
-
-
-
   // Update hall labels
 
   const hallLabels = document.querySelectorAll('.fp-hall-label');
-
-  if (hallLabels[0]) hallLabels[0].textContent = ev.hallALabel;
-
-  if (hallLabels[1]) hallLabels[1].textContent = ev.hallBLabel;
-
-
-
+  if (hallLabels[0]) hallLabels[0].innerHTML = ev.hallALabel;
+  if (hallLabels[1]) hallLabels[1].innerHTML = ev.hallBLabel;
   renderHall('hall-a', ev.hallA);
-
   renderHall('hall-b', ev.hallB);
-
 }
 
-
-
 function renderHall(id, booths) {
-
   const el = document.getElementById(id);
-
   el.innerHTML = booths.map(b => {
-
     const nameHtml = b.company
 
       ? `<div class="booth-company">${b.company}</div>`
 
       : `<div class="booth-company empty">Available</div>`;
-
     const clickFn = b.appId
 
       ? `openApp('${b.appId}')`
 
       : `openBoothModal('${b.id}')`;
-
     return `
 
       <div class="booth ${b.status}" onclick="${clickFn}">
@@ -3375,55 +2468,31 @@ function renderHall(id, booths) {
         <div class="booth-size">${b.sqm} m&sup2;</div>
 
       </div>`;
-
   }).join('');
-
 }
 
-
-
-/*      &middot; ASSIGN MODAL
-
-     &middot; */
+/* --- ASSIGN MODAL --- */
 
 let assigningAppId = null;
-
-
-
 function openAssignModal(appId) {
-
   assigningAppId = appId;
-
   const app = APPS.find(a => a.id === appId);
-
-  document.getElementById('am-co').textContent = app ? app.company : '     &mdash;';
-
+  document.getElementById('am-co').innerHTML = app ? app.company : '&mdash;';
   const ev = EVENT_DATA[currentEventId];
-
   const available = [...ev.hallA, ...ev.hallB].filter(b => !b.company);
-
   document.getElementById('am-booth-select').innerHTML =
 
     `<option value="">Select available booth...</option>` +
 
     available.map(b => `<option value="${b.id}">${b.id} &middot; ${b.sqm} m  2 &middot; Available</option>`).join('');
-
   document.getElementById('assign-modal').classList.add('show');
-
 }
 
-
-
 function openBoothModal(boothId) {
-
   const approvedApps = APPS.filter(a => a.status === 'approved');
-
   if (approvedApps.length === 0) {
-
     alert('No approved applications to assign to this booth.');
-
     return;
-
   }
 
   document.getElementById('am-booth-select').innerHTML =
@@ -3431,72 +2500,88 @@ function openBoothModal(boothId) {
     `<option value="">Select approved company...</option>` +
 
     approvedApps.map(a => `<option value="${a.id}">${a.company}      &mdash; ${a.sqm > 0 ? a.sqm + ' m&sup2;' : 'Custom'} &middot; ${a.pkg}</option>`).join('');
-
   document.getElementById('am-co').textContent = 'Booth ' + boothId;
-
   document.getElementById('assign-modal').classList.add('show');
-
 }
-
-
 
 function closeAssignModal() {
-
   document.getElementById('assign-modal').classList.remove('show');
-
   assigningAppId = null;
-
 }
 
-
-
 function confirmAssign() {
-
   if (!document.getElementById('am-booth-select').value) { alert('Please select a booth.'); return; }
 
   alert('Booth assigned. The exhibitor will be notified with their booth number and floor map position.');
-
   closeAssignModal();
-
   closePanel();
-
 }
 
-
-
-/*      &middot; UTILITY
-
-     &middot; */
+/* --- UTILITY --- */
 
 function setText(id, val) {
-
   const el = document.getElementById(id);
-
-  if (el) el.textContent = val !== undefined && val !== null ? val : '     &mdash;';
-
+  if (!el) return;
+  if (val === undefined || val === null) val = '—';
+  el.innerHTML = val;
 }
 
-
-
-/*      &middot; INIT
-
-     &middot; */
+/* --- INIT --- */
 
 const ev0 = EVENT_DATA.bfw;
-
 renderPipeline(ev0.apps);
-
 renderActivity(ev0.activity);
-
 renderApps('all');
-
 updateFilterCounts(ev0.apps);
-
 renderFloorPlan();
 
+/* ==================================================
+   MOBILE SIDEBAR TOGGLE
+================================================== */
+function toggleSidebar() {
+  const sb = document.querySelector('.sidebar');
+  const bd = document.getElementById('sb-backdrop');
+  if (!sb) return;
+  const isOpen = sb.classList.contains('open');
+  if (isOpen) {
+    closeSidebar();
+  } else {
+    sb.classList.add('open');
+    if (bd) bd.classList.add('show');
+  }
+}
+
+function closeSidebar() {
+  const sb = document.querySelector('.sidebar');
+  const bd = document.getElementById('sb-backdrop');
+  if (sb) sb.classList.remove('open');
+  if (bd) bd.classList.remove('show');
+}
+
 </script>
+
+
+<!-- Mobile Bottom Navigation Bar (Visible only on mobile/tablet) -->
+<nav class="mobile-bottom-nav">
+  <button class="mb-nav-item active" id="mb-nav-overview" onclick="switchView('overview', this)">
+    <span class="mb-nav-icon">◈</span>
+    <span class="mb-nav-label">Overview</span>
+  </button>
+  <button class="mb-nav-item" id="mb-nav-applications" onclick="switchView('applications', this)">
+    <span class="mb-nav-icon">☰</span>
+    <span class="mb-nav-label">Applications</span>
+    <span class="mb-nav-badge" id="mb-pending-badge">3</span>
+  </button>
+  <button class="mb-nav-item" id="mb-nav-floorplan" onclick="switchView('floorplan', this)">
+    <span class="mb-nav-icon">▦</span>
+    <span class="mb-nav-label">Floor Plan</span>
+  </button>
+  <button class="mb-nav-item" id="mb-nav-events" onclick="toggleSidebar()">
+    <span class="mb-nav-icon">⚙</span>
+    <span class="mb-nav-label">Events</span>
+  </button>
+</nav>
 
 </body>
 
 </html>
-
